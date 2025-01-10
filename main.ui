@@ -79,16 +79,6 @@
      <string>График</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget1">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>30</y>
-      <width>651</width>
-      <height>471</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QDial" name="dial_3">
     <property name="geometry">
      <rect>
@@ -154,7 +144,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>    </string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -306,6 +296,16 @@
      <string>Количество дней для анализа:</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>30</y>
+      <width>651</width>
+      <height>481</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -313,7 +313,7 @@
      <x>0</x>
      <y>0</y>
      <width>1371</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
