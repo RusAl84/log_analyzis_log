@@ -1,4 +1,4 @@
-from PyQt5 import uic,QtCore, QtGui, QtWidgets
+from PyQt5 import uic, QtCore, QtGui, QtWidgets
 from openpyxl import load_workbook
 from pyqtgraph import PlotWidget, plot
 import pyqtgraph as pg
@@ -21,13 +21,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.filename = 'logs.xlsx'  # Log file name
 
         self.pushButton.clicked.connect(self.load_logs)
-        self.tableWidget.setColumnCount(5)
-        self.tableWidget.setHorizontalHeaderLabels(
-            ["Event ID", "Event Name", "Start Time", "End Time", "Duration (min)"])
+        # self.tableWidget.setColumnCount(5)
+        # self.tableWidget.setHorizontalHeaderLabels(
+        #     ["Event ID", "Event Name", "Start Time", "End Time", "Duration (min)"])
 
         # Setup graph
         self.graphWidget.setBackground('w')
-        self.graphWidget.setLabel('left', 'Duration (min)', color='red', size=30)
+        self.graphWidget.setLabel(
+            'left', 'Duration (min)', color='red', size=30)
         self.graphWidget.setLabel('bottom', 'Event ID', color='red', size=30)
         self.graphWidget.showGrid(x=True, y=True)
 
@@ -44,19 +45,22 @@ class MainWindow(QtWidgets.QMainWindow):
         self.tableWidget.setRowCount(len(logs))
         for i, log in enumerate(logs):
             for j, value in enumerate(log):
-                self.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(value)))
+                self.tableWidget.setItem(
+                    i, j, QtWidgets.QTableWidgetItem(str(value)))
 
         # Analyze data
         self.analyze_logs(logs)
 
     def analyze_logs(self, logs):
         # Convert data to DataFrame for analysis
-        df = pd.DataFrame(logs, columns=["Event ID", "Event Name", "Start Time", "End Time", "Duration (min)"])
+        df = pd.DataFrame(logs, columns=[
+                          "Event ID", "Event Name", "Start Time", "End Time", "Duration (min)"])
 
         # Convert time to datetime
         df["Start Time"] = pd.to_datetime(df["Start Time"])
         df["End Time"] = pd.to_datetime(df["End Time"])
-        df["Duration (min)"] = (df["End Time"] - df["Start Time"]).dt.total_seconds() / 60
+        df["Duration (min)"] = (df["End Time"] -
+                                df["Start Time"]).dt.total_seconds() / 60
 
         # Plot event durations
         self.plot_event_durations(df)
@@ -75,18 +79,22 @@ class MainWindow(QtWidgets.QMainWindow):
         # Forecasting using ARIMA
         df.set_index("Start Time", inplace=True)
         df = df.resample('D').sum()  # Resample to daily frequency
-        df['Duration (min)'] = df['Duration (min)'].fillna(0)  # Fill NaN values
+        df['Duration (min)'] = df['Duration (min)'].fillna(
+            0)  # Fill NaN values
 
         # Fit ARIMA model
-        model = ARIMA(df['Duration (min)'], order=(1, 1, 1))  # Adjust order as needed
+        model = ARIMA(df['Duration (min)'], order=(
+            1, 1, 1))  # Adjust order as needed
         model_fit = model.fit()
 
         # Forecasting
         forecast = model_fit.forecast(steps=7)  # Forecast for the next 7 days
-        forecast_index = pd.date_range(start=df.index[-1] + pd.Timedelta(days=1), periods=7, freq='D')
+        forecast_index = pd.date_range(
+            start=df.index[-1] + pd.Timedelta(days=1), periods=7, freq='D')
 
         # Plot forecast
-        self.graphWidget.plot(forecast_index, forecast, pen='g', symbol='x', name='Forecast')
+        self.graphWidget.plot(forecast_index, forecast,
+                              pen='g', symbol='x', name='Forecast')
 
 
 def main():

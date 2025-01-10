@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1371</width>
+    <width>1633</width>
     <height>658</height>
    </rect>
   </property>
@@ -141,7 +141,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Данные для анализа</string>
+     <string>Загрузка данных</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -154,7 +154,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>    </string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -312,8 +312,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1371</width>
-     <height>26</height>
+     <width>1633</width>
+     <height>18</height>
     </rect>
    </property>
   </widget>
