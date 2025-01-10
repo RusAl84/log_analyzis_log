@@ -21,9 +21,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.filename = 'logs.xlsx'  # Log file name
 
         self.pushButton.clicked.connect(self.load_logs)
-        # self.tableWidget.setColumnCount(5)
-        # self.tableWidget.setHorizontalHeaderLabels(
-        #     ["Event ID", "Event Name", "Start Time", "End Time", "Duration (min)"])
+        self.tableWidget.setColumnCount(5)
+        self.tableWidget.setHorizontalHeaderLabels(
+            ["Event ID", "Event Name", "Start Time", "End Time", "Duration (min)"])
 
         # Setup graph
         self.graphWidget.setBackground('w')
