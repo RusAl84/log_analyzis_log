@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1633</width>
+    <height>658</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>530</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Прогнозировать</string>
+    </property>
+   </widget>
+   <widget class="PlotWidget" name="graphWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>691</width>
+      <height>491</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDial" name="dial">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>520</y>
+      <width>50</width>
+      <height>64</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>580</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>График</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget1">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>30</y>
+      <width>651</width>
+      <height>471</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDial" name="dial_3">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>520</y>
+      <width>50</width>
+      <height>64</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_2">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>530</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_3">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>530</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>7</number>
+    </property>
+    <property name="value">
+     <number>4</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>10</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Загрузка данных</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>10</y>
+      <width>601</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>540</y>
+      <width>191</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Авторегрессия (запаздывание):</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>590</y>
+      <width>191</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сумирующий параметр:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>540</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Скользящее среднее:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>600</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Количество дней прогноза</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_4">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>590</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>30</number>
+    </property>
+    <property name="singleStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>7</number>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>530</y>
+      <width>531</width>
+      <height>87</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>510</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Отладка модели прогнозирования</string>
+    </property>
+   </widget>
+   <widget class="QDial" name="dial_5">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>520</y>
+      <width>50</width>
+      <height>64</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDial" name="dial_6">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>520</y>
+      <width>50</width>
+      <height>64</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_5">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>580</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>15</number>
+    </property>
+    <property name="maximum">
+     <number>30</number>
+    </property>
+    <property name="singleStep">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>590</y>
+      <width>181</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Количество дней для анализа:</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1633</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QWidget</extends>
+   <header>pyqtgraph</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
